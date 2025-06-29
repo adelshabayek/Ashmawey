@@ -9,6 +9,8 @@
   --btn-text: #fff;
 }
 
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,6 +23,7 @@ body {
   color: var(--text-dark);
   transition: ease-in-out 0.2s;
 }
+
 
 .container {
   max-width: 1140px;
@@ -178,3 +181,35 @@ h1 {
 .copyWrite:hover {
   color: #f1d4ae;
 }
+
+
+  .lang-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  #langBtn {
+    background: linear-gradient(to right, #aa8453, #aa845375);
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  #langBtn:hover {
+    background: linear-gradient(to right, #aa8453, #aa845375);
+    transform: scale(1.05);
+  }
+
+body[dir="rtl"] {
+  font-family: "Alexandria", sans-serif;
+  text-align: right;
+  letter-spacing: 2px;
+}
+
