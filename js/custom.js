@@ -1,4 +1,4 @@
-  let currentLang = 'en';
+  let currentLang = 'ar';
 
   function setLanguage(lang) {
     document.documentElement.lang = lang;
