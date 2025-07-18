@@ -56,146 +56,180 @@
         <button id="langBtn">العربية</button>
       </div> -->
 
+      <div class="vi">
+        <span class="animate-charcter" style="">V1.0.2</span>
+      </div>
+
       <div class="container">
-        <img src="../img/logo.png" width="200px" alt />
-        <h1>كافيه فاكت</h1>
+        <img
+          src="../img/logo.png"
+          width="200px"
+          class="rounded-50"
+          alt="Fact-logo"
+        />
+        <h1>Welcome to Fact Café</h1>
         <p class="subtitle">صُنعَت بعناية، وقدّمت بأناقة.</p>
 
-        <div class="menu-section" data-aos="fade-up">
-          <h2 class="section-title"> الوافل</h2>
+        <div class="py-3 text-center">
+          <!-- أزرار التبديل بين الأقسام -->
+          <div class="d-flex justify-content-center gap-4 flex-wrap mb-5">
+            <button class="btn nav-tab active-tab" data-target="waffle">
+              <i class="bi bi-grid-fill ms-2"></i> الوافل
+            </button>
+            <button class="btn nav-tab" data-target="western">
+              <i class="bi bi-cake-fill ms-2"></i> الحلويات الغربية
+            </button>
+          </div>
 
-          <div class="menu-grid">
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">وافل استك</div>
-                <div class="item-price">$35</div>
+          <!-- قسم الوافل -->
+          <div id="waffle" class="menu-category">
+            <h2 class="section-title">الوافل</h2>
+            <div class="menu-grid">
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">وافل استك</div>
+                  <div class="item-price">$35</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
 
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">وافل مكس</div>
-                <div class="item-price">$80</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">وافل مكس</div>
+                  <div class="item-price">$80</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
 
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">وافل</div>
-                <div class="item-price">$70</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">وافل</div>
+                  <div class="item-price">$70</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
 
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">بان كيك</div>
-                <div class="item-price">$60</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">بان كيك</div>
+                  <div class="item-price">$60</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
             </div>
           </div>
 
-          <h2 class="section-title"> الحلويات الغربيه</h2>
-          <div class="menu-grid">
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">ريدفيلفد كيك</div>
-                <div class="item-price">$70</div>
+          <!-- قسم الحلويات الغربية -->
+          <div id="western" class="menu-category" style="display: none">
+            <h2 class="section-title">الحلويات الغربية</h2>
+            <div class="menu-grid">
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">ريدفيلفد كيك</div>
+                  <div class="item-price">$70</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
 
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">فادج </div>
-                <div class="item-price">$75</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">فادج</div>
+                  <div class="item-price">$75</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
 
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">سان سبستيان</div>
-                <div class="item-price">$70</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">سان سبستيان</div>
+                  <div class="item-price">$70</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
 
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">تشيز كيك</div>
-                <div class="item-price">$65</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">تشيز كيك</div>
+                  <div class="item-price">$65</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
 
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">تيرامسيو </div>
-                <div class="item-price">$70</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">تيرامسيو</div>
+                  <div class="item-price">$70</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
 
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">براونيز</div>
-                <div class="item-price">$60</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">براونيز</div>
+                  <div class="item-price">$60</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
 
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">كوكيز سبيشيال</div>
-                <div class="item-price">$65</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">كوكيز سبيشيال</div>
+                  <div class="item-price">$65</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
 
-             <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">دونتس</div>
-                <div class="item-price">$35</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">دونتس</div>
+                  <div class="item-price">$35</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
-            </div>
-            <div class="menu-card" data-aos="zoom-in-up">
-              <div class="item-header">
-                <div class="item-name">اكلير</div>
-                <div class="item-price">$50</div>
+              <div class="menu-card" data-aos="zoom-in-up">
+                <div class="item-header">
+                  <div class="item-name">اكلير</div>
+                  <div class="item-price">$50</div>
+                </div>
+                <p class="item-description">
+                  Balanced espresso and foam with creamy milk.
+                </p>
               </div>
-              <p class="item-description">
-                Balanced espresso and foam with creamy milk.
-              </p>
             </div>
+          </div>
+
+          <!-- أزرار التبديل بين الأقسام -->
+          <div class="d-flex justify-content-center gap-4 flex-wrap mb-5">
+            <button class="btn nav-tab active-tab" data-target="waffle">
+              <i class="bi bi-grid-fill ms-2"></i> الوافل
+            </button>
+            <button class="btn nav-tab" data-target="western">
+              <i class="bi bi-cake-fill ms-2"></i> الحلويات الغربية
+            </button>
           </div>
         </div>
 
@@ -226,13 +260,35 @@
 
     <!-- bootstrap -->
 
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script>
+      const navTabs = document.querySelectorAll(".nav-tab");
+      const menuSections = document.querySelectorAll(".menu-category");
+
+      navTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          navTabs.forEach((t) => t.classList.remove("active-tab"));
+          tab.classList.add("active-tab");
+
+          const selected = tab.getAttribute("data-target");
+          menuSections.forEach((section) => {
+            section.style.display = section.id === selected ? "block" : "none";
+            section.classList.remove("fadeInUp");
+            void section.offsetWidth;
+            section.classList.add("fadeInUp");
+          });
+        });
+      });
+    </script>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
       AOS.init({ duration: 1000, once: true });
     </script>
+
+    <script src="../js/custom.js"></script>
   </body>
 </html>
