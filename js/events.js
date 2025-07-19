@@ -1,27 +1,27 @@
-//   window.addEventListener("load", () => {
-//     const logo = document.querySelector("img[src*='logo']");
-//     if (logo) {
-//       logo.style.transition = "transform 1s ease";
-//       logo.style.transform = "rotate(360deg) scale(1.1)";
-//       setTimeout(() => {
-//         logo.style.transform = "scale(1)";
-//       }, 1000);
-//     }
-//   });
+  window.addEventListener("load", () => {
+    const logo = document.querySelector("img[src*='logo']");
+    if (logo) {
+      logo.style.transition = "transform 1s ease";
+      logo.style.transform = "rotate(360deg) scale(1.1)";
+      setTimeout(() => {
+        logo.style.transform = "scale(1)";
+      }, 1000);
+    }
+  });
 
 //   الكتابه المتحركه
 
-// function typeWriter(element, text, i = 0) {
-//     if (i < text.length) {
-//       element.innerHTML += text.charAt(i);
-//       setTimeout(() => typeWriter(element, text, i + 1), 80);
-//     }
-//   }
+function typeWriter(element, text, i = 0) {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      setTimeout(() => typeWriter(element, text, i + 1), 80);
+    }
+  }
 
-//   document.addEventListener("DOMContentLoaded", () => {
-//     const title = document.querySelector("h1");
-//     const text = title.getAttribute("data-en") || title.textContent;
-//     title.textContent = "";
-//     typeWriter(title, text);
-//   });
+  document.addEventListener("DOMContentLoaded", () => {
+    const title = document.querySelector("h1");
+    const text = title.getAttribute("data-en") || title.textContent;
+    title.textContent = "";
+    typeWriter(title, text);
+  });
 
