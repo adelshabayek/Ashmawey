@@ -71,22 +71,22 @@
         <div class="py-3 text-center">
           <!-- أزرار التبديل بين الأقسام -->
           <div class="d-flex justify-content-center gap-4 flex-wrap mb-5">
-            <button class="btn nav-tab active-tab" data-target="waffle">
+            <button class="btn nav-tab active-tab" data-target="chicken">
               <i class="bi bi-grid-fill ms-2"></i> كريب فراخ
             </button>
-            <button class="btn nav-tab" data-target="western">
+            <button class="btn nav-tab" data-target="meat">
               <i class="bi bi-cake-fill ms-2"></i> كريب لحوم
             </button>
-            <button class="btn nav-tab" data-target="western-2">
+            <button class="btn nav-tab" data-target="cheese">
               <i class="bi bi-cake-fill ms-2"></i> كريب جبن
             </button>
-            <button class="btn nav-tab" data-target="western-3">
+            <button class="btn nav-tab" data-target="sandwich">
               <i class="bi bi-cake-fill ms-2"></i> سندوتشات
             </button>
           </div>
 
           <!-- قسم كريب فراخ -->
-          <div id="waffle" class="menu-category">
+          <div id="chicken" class="menu-category">
             <h2 class="section-title">كريب فراخ</h2>
             <div class="menu-grid">
               <div class="menu-card" data-aos="zoom-in-up">
@@ -177,7 +177,7 @@
           </div>
 
           <!-- قسم كريب لحوم -->
-          <div id="western" class="menu-category" style="display: none">
+          <div id="meat" class="menu-category" style="display: none">
             <h2 class="section-title">كريب لحوم</h2>
             <div class="menu-grid">
               <div class="menu-card" data-aos="zoom-in-up">
@@ -233,7 +233,7 @@
           </div>
 
           <!-- قسم كريب جبن -->
-          <div id="western-2" class="menu-category" style="display: none">
+          <div id="cheese" class="menu-category" style="display: none">
             <h2 class="section-title">كريب جبن</h2>
             <div class="menu-grid">
               <div class="menu-card" data-aos="zoom-in-up">
@@ -279,7 +279,7 @@
           </div>
 
           <!-- قسم ساندوتشات -->
-          <div id="western-3" class="menu-category" style="display: none">
+          <div id="sandwich" class="menu-category" style="display: none">
             <h2 class="section-title">ساندوتشات</h2>
             <div class="menu-grid">
               <div class="menu-card" data-aos="zoom-in-up">
@@ -386,16 +386,16 @@
 
           <!-- أزرار التبديل بين الأقسام -->
           <div class="d-flex justify-content-center gap-4 flex-wrap mb-5">
-            <button class="btn nav-tab active-tab" data-target="waffle">
+            <button class="btn nav-tab active-tab" data-target="chicken">
               <i class="bi bi-grid-fill ms-2"></i> كريب فراخ
             </button>
-            <button class="btn nav-tab" data-target="western">
+            <button class="btn nav-tab" data-target="meat">
               <i class="bi bi-cake-fill ms-2"></i> كريب لحوم
             </button>
-            <button class="btn nav-tab" data-target="western-2">
+            <button class="btn nav-tab" data-target="cheese">
               <i class="bi bi-cake-fill ms-2"></i> كريب جبن
             </button>
-            <button class="btn nav-tab" data-target="western-3">
+            <button class="btn nav-tab" data-target="sandwich">
               <i class="bi bi-cake-fill ms-2"></i> سندوتشات
             </button>
           </div>
@@ -428,25 +428,7 @@
 
     <!-- bootstrap -->
 
-    <script>
-      const navTabs = document.querySelectorAll(".nav-tab");
-      const menuSections = document.querySelectorAll(".menu-category");
 
-      navTabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          navTabs.forEach((t) => t.classList.remove("active-tab"));
-          tab.classList.add("active-tab");
-
-          const selected = tab.getAttribute("data-target");
-          menuSections.forEach((section) => {
-            section.style.display = section.id === selected ? "block" : "none";
-            section.classList.remove("fadeInUp");
-            void section.offsetWidth;
-            section.classList.add("fadeInUp");
-          });
-        });
-      });
-    </script>
 
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/bootstrap.js"></script>
@@ -456,5 +438,7 @@
     <script>
       AOS.init({ duration: 1000, once: true });
     </script>
+
+    <script src="../js/custom.js"></script>
   </body>
 </html>
