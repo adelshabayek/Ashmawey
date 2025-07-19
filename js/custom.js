@@ -57,3 +57,30 @@ document.querySelectorAll(".nav-tab").forEach((button) => {
     }
   });
 });
+
+//   جعل الأزرار تنبض عند التحويم
+
+ document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".cta-button");
+    buttons.forEach(btn => {
+      btn.addEventListener("mouseenter", () => {
+        btn.style.transition = "transform 0.3s ease";
+        btn.style.transform = "scale(1.1)";
+      });
+      btn.addEventListener("mouseleave", () => {
+        btn.style.transform = "scale(1)";
+      });
+    });
+  });
+
+
+   window.addEventListener("load", () => {
+    const logo = document.querySelector("img[src*='logo']");
+    if (logo) {
+      logo.style.transition = "transform 1s ease";
+      logo.style.transform = "rotate(360deg) scale(1.1)";
+      setTimeout(() => {
+        logo.style.transform = "scale(1)";
+      }, 1000);
+    }
+  });
