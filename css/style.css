@@ -42,7 +42,7 @@ h1 {
   font-weight: 700;
   margin-bottom: 16px;
   color: var(--primary);
-  animation: fadeInUp 1s ease-out;
+ 
 }
 
 .subtitle {
