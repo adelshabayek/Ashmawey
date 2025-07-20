@@ -49,7 +49,7 @@ h1 {
   color: var(--text-light);
   font-size: 1.25rem;
   margin-bottom: 40px;
-  animation: fadeIn 1.5s ease-out;
+ 
 }
 
 .button-group {
