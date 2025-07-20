@@ -1,5 +1,5 @@
 :root {
-  --bg: #f4f1ee;
+  --bg: #f4ebdc;
   --text-dark: #1a1a1a;
   --text-light: #5a5a5a;
   --primary: #284831;
@@ -202,7 +202,7 @@ h1 {
   z-index: 1000;
 }
 
-#langBtn {
+/* #langBtn {
   background: linear-gradient(to right, #aa8453, #aa845375);
   border: none;
   color: white;
@@ -217,7 +217,7 @@ h1 {
 #langBtn:hover {
   background: linear-gradient(to right, #aa8453, #aa845375);
   transform: scale(1.05);
-}
+} */
 
 body[dir="rtl"] {
   font-family: "Alexandria", sans-serif;
