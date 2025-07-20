@@ -35,5 +35,19 @@ document.querySelectorAll(".nav-tab").forEach((button) => {
   });
 });
 
+// logo rotate 
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const logo = document.querySelector("img[src*='logo']");
+    if (logo) {
+      logo.style.transition = "transform 1s ease";
+      logo.style.transform = "rotate(360deg) scale(1.1)";
+      setTimeout(() => {
+        logo.style.transform = "scale(1)";
+      }, 1000); // العودة إلى الحجم الطبيعي بعد ثانية
+    }
+  }, 1700); // تأخير 5 ثواني
+});
 
  
