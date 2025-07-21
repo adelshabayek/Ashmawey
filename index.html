@@ -191,25 +191,6 @@
     wrapper.style.textShadow = `0 0 ${glow}px rgba(255,255,255,0.7)`;
   });
 
-  // 🎉 Emoji burst on key press
-  const emojis = ["💥", "🎈", "✨", "🔥", "😱", "🌀"];
-  document.addEventListener("keydown", (e) => {
-    const emoji = document.createElement("div");
-    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-    emoji.style.position = "fixed";
-    emoji.style.left = `${Math.random() * 100}%`;
-    emoji.style.top = `${Math.random() * 100}%`;
-    emoji.style.fontSize = "2rem";
-    emoji.style.pointerEvents = "none";
-    emoji.style.transition = "all 2s ease";
-    emoji.style.opacity = "1";
-    document.body.appendChild(emoji);
-    setTimeout(() => {
-      emoji.style.top = "-50px";
-      emoji.style.opacity = "0";
-    }, 50);
-    setTimeout(() => emoji.remove(), 2000);
-  });
 
 
 
