@@ -156,17 +156,12 @@
     if (index < message.length) {
       messageElement.textContent += message.charAt(index);
       index++;
-      setTimeout(typeWriter, 80);
+      setTimeout(typeWriter, 50);
     }
   }
   setTimeout(typeWriter, 500);
 
-  // 🖱 Parallax
-  document.addEventListener("mousemove", (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 10;
-    const y = (e.clientY / window.innerHeight - 0.5) * 10;
-    document.querySelector(".wrapper").style.transform = `translate(${x}px, ${y}px)`;
-  });
+
 
   // 🌗 Dark mode with "D"
   document.addEventListener("keydown", (e) => {
@@ -216,16 +211,7 @@
     setTimeout(() => emoji.remove(), 2000);
   });
 
-  // 💡 Shake effect if mouse speed is fast
-  let lastMove = Date.now();
-  document.addEventListener("mousemove", (e) => {
-    const now = Date.now();
-    if (now - lastMove < 30) {
-      document.body.classList.add("shake");
-      setTimeout(() => document.body.classList.remove("shake"), 300);
-    }
-    lastMove = now;
-  });
+
 
   // ⏱ Live clock display
   const clock = document.createElement("div");
@@ -252,27 +238,27 @@
     "404 but still fabulous."
   ];
   const quote = document.createElement("div");
-  quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
-  quote.style.marginTop = "1rem";
-  quote.style.fontSize = "1rem";
-  quote.style.opacity = "0.7";
-  document.querySelector(".wrapper").appendChild(quote);
+quote.style.marginTop = "1rem";
+quote.style.fontSize = "1rem";
+quote.style.opacity = "0";
+quote.style.transition = "opacity 0.6s ease";
+document.querySelector(".wrapper").appendChild(quote);
 
-  // Shake style
-  const shakeStyle = document.createElement("style");
-  shakeStyle.textContent = `
-    .shake {
-      animation: shake 0.3s ease;
-    }
-    @keyframes shake {
-      0% { transform: translate(2px, 0); }
-      25% { transform: translate(-2px, 2px); }
-      50% { transform: translate(2px, -2px); }
-      75% { transform: translate(-2px, -2px); }
-      100% { transform: translate(0, 0); }
-    }
-  `;
-  document.head.appendChild(shakeStyle);
+function updateQuote() {
+  quote.style.opacity = "0"; // fade out
+  setTimeout(() => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quote.textContent = quotes[randomIndex];
+    quote.style.opacity = "1"; // fade in
+  }, 600); // wait for fade out before showing new
+}
+
+// Initial load
+updateQuote();
+setInterval(updateQuote, 3000);
+
+
+
 
   console.log("🚀 Enhanced 404 with interactive JS features loaded!");
 </script>
