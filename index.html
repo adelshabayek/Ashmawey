@@ -132,26 +132,151 @@
     <h2>Please contact the developer</h2>
     <a href="https://adelshabayek.vercel.app/" class="btn">contact him</a>
   </div>
+<script>
+  // 🫧 Floating bubbles
+  const bubblesContainer = document.getElementById("bubbles");
+  for (let i = 0; i < 20; i++) {
+    const bubble = document.createElement("div");
+    bubble.classList.add("bubble");
+    const size = Math.random() * 60 + 20;
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${Math.random() * 100}%`;
+    bubble.style.animationDuration = `${6 + Math.random() * 6}s`;
+    bubble.style.animationDelay = `${Math.random() * 4}s`;
+    bubblesContainer.appendChild(bubble);
+  }
 
-  <script>
-    // Create animated floating bubbles
-    const bubblesContainer = document.getElementById("bubbles");
-
-    for (let i = 0; i < 20; i++) {
-      const bubble = document.createElement("div");
-      bubble.classList.add("bubble");
-
-      const size = Math.random() * 60 + 20;
-      bubble.style.width = `${size}px`;
-      bubble.style.height = `${size}px`;
-      bubble.style.left = `${Math.random() * 100}%`;
-      bubble.style.animationDuration = `${6 + Math.random() * 6}s`;
-      bubble.style.animationDelay = `${Math.random() * 4}s`;
-
-      bubblesContainer.appendChild(bubble);
+  // 🎯 Typewriter subtitle
+  const message = "Server has been died.";
+  const messageElement = document.querySelector("p");
+  messageElement.textContent = "";
+  let index = 0;
+  function typeWriter() {
+    if (index < message.length) {
+      messageElement.textContent += message.charAt(index);
+      index++;
+      setTimeout(typeWriter, 80);
     }
+  }
+  setTimeout(typeWriter, 500);
 
-    console.log("🎈 Responsive 404 Page Loaded");
-  </script>
+  // 🖱 Parallax
+  document.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 10;
+    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+    document.querySelector(".wrapper").style.transform = `translate(${x}px, ${y}px)`;
+  });
+
+  // 🌗 Dark mode with "D"
+  document.addEventListener("keydown", (e) => {
+    if (e.key.toLowerCase() === "d") {
+      document.body.classList.toggle("dark-mode");
+    }
+  });
+  const darkStyle = document.createElement("style");
+  darkStyle.textContent = `
+    body.dark-mode {
+      background: linear-gradient(135deg, #111, #333, #555);
+      color: #eee;
+    }
+    body.dark-mode .btn {
+      background: #eee;
+      color: #111;
+    }
+  `;
+  document.head.appendChild(darkStyle);
+
+  // ✨ Glow effect when cursor is near text
+  document.addEventListener("mousemove", (e) => {
+    const wrapper = document.querySelector(".wrapper");
+    const rect = wrapper.getBoundingClientRect();
+    const dist = Math.hypot(e.clientX - rect.left - rect.width / 2, e.clientY - rect.top - rect.height / 2);
+    const glow = Math.max(100 - dist / 5, 0);
+    wrapper.style.textShadow = `0 0 ${glow}px rgba(255,255,255,0.7)`;
+  });
+
+  // 🎉 Emoji burst on key press
+  const emojis = ["💥", "🎈", "✨", "🔥", "😱", "🌀"];
+  document.addEventListener("keydown", (e) => {
+    const emoji = document.createElement("div");
+    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.position = "fixed";
+    emoji.style.left = `${Math.random() * 100}%`;
+    emoji.style.top = `${Math.random() * 100}%`;
+    emoji.style.fontSize = "2rem";
+    emoji.style.pointerEvents = "none";
+    emoji.style.transition = "all 2s ease";
+    emoji.style.opacity = "1";
+    document.body.appendChild(emoji);
+    setTimeout(() => {
+      emoji.style.top = "-50px";
+      emoji.style.opacity = "0";
+    }, 50);
+    setTimeout(() => emoji.remove(), 2000);
+  });
+
+  // 💡 Shake effect if mouse speed is fast
+  let lastMove = Date.now();
+  document.addEventListener("mousemove", (e) => {
+    const now = Date.now();
+    if (now - lastMove < 30) {
+      document.body.classList.add("shake");
+      setTimeout(() => document.body.classList.remove("shake"), 300);
+    }
+    lastMove = now;
+  });
+
+  // ⏱ Live clock display
+  const clock = document.createElement("div");
+  clock.style.position = "fixed";
+  clock.style.bottom = "20px";
+  clock.style.right = "20px";
+  clock.style.fontSize = "1rem";
+  clock.style.color = "#ccc";
+  document.body.appendChild(clock);
+
+  function updateClock() {
+    const now = new Date();
+    clock.textContent = now.toLocaleTimeString();
+    requestAnimationFrame(updateClock);
+  }
+  updateClock();
+
+  // 💬 Random message
+  const quotes = [
+    "Stay calm. It’s just a broken server.",
+    "Even the best servers need rest.",
+    "Oops! Let’s fix that soon.",
+    "Lost in digital space?",
+    "404 but still fabulous."
+  ];
+  const quote = document.createElement("div");
+  quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+  quote.style.marginTop = "1rem";
+  quote.style.fontSize = "1rem";
+  quote.style.opacity = "0.7";
+  document.querySelector(".wrapper").appendChild(quote);
+
+  // Shake style
+  const shakeStyle = document.createElement("style");
+  shakeStyle.textContent = `
+    .shake {
+      animation: shake 0.3s ease;
+    }
+    @keyframes shake {
+      0% { transform: translate(2px, 0); }
+      25% { transform: translate(-2px, 2px); }
+      50% { transform: translate(2px, -2px); }
+      75% { transform: translate(-2px, -2px); }
+      100% { transform: translate(0, 0); }
+    }
+  `;
+  document.head.appendChild(shakeStyle);
+
+  console.log("🚀 Enhanced 404 with interactive JS features loaded!");
+</script>
+
+  
 </body>
 </html>
