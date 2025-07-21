@@ -1,232 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <link rel="icon" href="../img/logo.png" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fact Cafe</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .wrapper {
-      z-index: 2;
-      animation: fadeIn 1.2s ease-out;
-      max-width: 90%;
-    }
-
-    h1 {
-      font-size: 12vw;
-      font-weight: 900;
-      animation: popIn 1s ease-in-out;
-    }
-
-    p {
-      font-size: 4vw;
-      max-width: 600px;
-      margin: 1rem auto;
-      opacity: 0.85;
-    }
-
-    h2 {
-      font-size: 3.5vw;
-      font-weight: 400;
-      color: #ddd;
-      margin-bottom: 2rem;
-    }
-
-    .btn {
-      background-color: #fff;
-      color: #2c3e50;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      display: inline-block;
-    }
-
-    .btn:hover {
-      background-color: #f0f0f0;
-      transform: translateY(-4px);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes popIn {
-      0% { opacity: 0; transform: scale(0.7); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    .bubbles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .bubble {
-      position: absolute;
-      bottom: -100px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      animation: rise 10s infinite ease-in;
-    }
-
-    @keyframes rise {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fact Cafe</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      100% {
-        transform: translateY(-1200px) scale(1.5);
-        opacity: 0;
-      }
-    }
 
-    @media (min-width: 768px) {
+      body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #fff;
+        font-family: "Segoe UI", sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .wrapper {
+        z-index: 2;
+        animation: fadeIn 1.2s ease-out;
+        max-width: 90%;
+      }
+
       h1 {
-        font-size: 8rem;
+        font-size: 12vw;
+        font-weight: 900;
+        animation: popIn 1s ease-in-out;
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 4vw;
+        max-width: 600px;
+        margin: 1rem auto;
+        opacity: 0.85;
       }
 
       h2 {
-        font-size: 1.2rem;
+        font-size: 3.5vw;
+        font-weight: 400;
+        color: #ddd;
+        margin-bottom: 2rem;
       }
-    }
-    .glow {
-  text-shadow: 
-    0 0 0px rgba(255, 255, 255, 0.83),
-    0 0 0px rgba(255, 255, 255, 0.83),
-    0 0 10px rgba(255, 255, 255, 0.83),
-    0 0 50px rgba(255, 255, 255, 0.83);
-}
 
-  </style>
-</head>
-<body>
-  <div class="bubbles" id="bubbles"></div>
+      .btn {
+        background-color: #fff;
+        color: #2c3e50;
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+      }
 
-  <div class="wrapper">
-    <h1 class="glow">404 Not Found</h1>
-    <p style=""> Server has been died.</p>
-    <h2>Please contact the developer</h2>
-    <a href="https://adelshabayek.vercel.app/" class="btn">contact him</a>
-  </div>
-<script>
-  // 🫧 Floating bubbles
-  const bubblesContainer = document.getElementById("bubbles");
-  for (let i = 0; i < 20; i++) {
-    const bubble = document.createElement("div");
-    bubble.classList.add("bubble");
-    const size = Math.random() * 60 + 20;
-    bubble.style.width = `${size}px`;
-    bubble.style.height = `${size}px`;
-    bubble.style.left = `${Math.random() * 100}%`;
-    bubble.style.animationDuration = `${6 + Math.random() * 6}s`;
-    bubble.style.animationDelay = `${Math.random() * 4}s`;
-    bubblesContainer.appendChild(bubble);
-  }
+      .btn:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-4px);
+      }
 
-  // 🎯 Typewriter subtitle
-  const message = "Server has been died.";
-  const messageElement = document.querySelector("p");
-  messageElement.textContent = "";
-  let index = 0;
-  function typeWriter() {
-    if (index < message.length) {
-      messageElement.textContent += message.charAt(index);
-      index++;
-      setTimeout(typeWriter, 50);
-    }
-  }
-  setTimeout(typeWriter, 500);
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
+      @keyframes popIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.7);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
 
+      .bubbles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+      }
 
-  
+      .bubble {
+        position: absolute;
+        bottom: -100px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: rise 10s infinite ease-in;
+      }
 
+      @keyframes rise {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-1200px) scale(1.5);
+          opacity: 0;
+        }
+      }
 
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 8rem;
+        }
 
+        p {
+          font-size: 1.5rem;
+        }
 
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+      .glow {
+        text-shadow: 0 0 0px rgba(255, 255, 255, 0.83),
+          0 0 0px rgba(255, 255, 255, 0.83), 0 0 10px rgba(255, 255, 255, 0.83),
+          0 0 50px rgba(255, 255, 255, 0.83);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bubbles" id="bubbles"></div>
 
-  // ⏱ Live clock display
-  const clock = document.createElement("div");
-  clock.style.position = "fixed";
-  clock.style.bottom = "20px";
-  clock.style.right = "20px";
-  clock.style.fontSize = "1rem";
-  clock.style.color = "#ccc";
-  document.body.appendChild(clock);
+    <div class="wrapper">
+      <h1 class="glow">404 Not Found</h1>
+      <p style="">Server has been died.</p>
+      <h2>Please contact the developer</h2>
+      <a href="https://adelshabayek.vercel.app/" class="btn">contact him</a>
+    </div>
+    <script>
+      // 🫧 Floating bubbles
+      const bubblesContainer = document.getElementById("bubbles");
+      for (let i = 0; i < 20; i++) {
+        const bubble = document.createElement("div");
+        bubble.classList.add("bubble");
+        const size = Math.random() * 60 + 20;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${Math.random() * 100}%`;
+        bubble.style.animationDuration = `${6 + Math.random() * 6}s`;
+        bubble.style.animationDelay = `${Math.random() * 4}s`;
+        bubblesContainer.appendChild(bubble);
+      }
 
-  function updateClock() {
-    const now = new Date();
-    clock.textContent = now.toLocaleTimeString();
-    requestAnimationFrame(updateClock);
-  }
-  updateClock();
+      // 🎯 Typewriter subtitle
+      const message = "Server has been died.";
+      const messageElement = document.querySelector("p");
+      messageElement.textContent = "";
+      let index = 0;
+      function typeWriter() {
+        if (index < message.length) {
+          messageElement.textContent += message.charAt(index);
+          index++;
+          setTimeout(typeWriter, 50);
+        }
+      }
+      setTimeout(typeWriter, 500);
 
-  // 💬 Random message
-  const quotes = [
-    "Stay calm. It’s just a broken server.",
-    "Even the best servers need rest.",
-    "Oops! Let’s fix that soon.",
-    "Lost in digital space?",
-    "404 but still fabulous."
-  ];
-  const quote = document.createElement("div");
-quote.style.marginTop = "1rem";
-quote.style.fontSize = "1rem";
-quote.style.opacity = "0";
-quote.style.transition = "opacity 0.6s ease";
-document.querySelector(".wrapper").appendChild(quote);
+      // ⏱ Live clock display
+      const clock = document.createElement("div");
+      clock.style.position = "fixed";
+      clock.style.bottom = "20px";
+      clock.style.right = "20px";
+      clock.style.fontSize = "1rem";
+      clock.style.color = "#ccc";
+      document.body.appendChild(clock);
 
-function updateQuote() {
-  quote.style.opacity = "0"; // fade out
-  setTimeout(() => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    quote.textContent = quotes[randomIndex];
-    quote.style.opacity = "1"; // fade in
-  }, 600); // wait for fade out before showing new
-}
+      function updateClock() {
+        const now = new Date();
+        clock.textContent = now.toLocaleTimeString();
+        requestAnimationFrame(updateClock);
+      }
+      updateClock();
 
-// Initial load
-updateQuote();
-setInterval(updateQuote, 3000);
+      // 💬 Random message
+      const quotes = [
+        "Stay calm. It’s just a broken server.",
+        "Even the best servers need rest.",
+        "Oops! Let’s fix that soon.",
+        "Lost in digital space?",
+        "404 but still fabulous.",
+      ];
+      const quote = document.createElement("div");
+      quote.style.marginTop = "1rem";
+      quote.style.fontSize = "1rem";
+      quote.style.opacity = "0";
+      quote.style.transition = "opacity 0.6s ease";
+      document.querySelector(".wrapper").appendChild(quote);
 
+      function updateQuote() {
+        quote.style.opacity = "0"; // fade out
+        setTimeout(() => {
+          const randomIndex = Math.floor(Math.random() * quotes.length);
+          quote.textContent = quotes[randomIndex];
+          quote.style.opacity = "1"; // fade in
+        }, 600); // wait for fade out before showing new
+      }
 
+      // Initial load
+      updateQuote();
+      setInterval(updateQuote, 2500);
 
-
-  console.log("🚀 Enhanced 404 with interactive JS features loaded!");
-</script>
-
-  
-</body>
+      console.log("🚀 Enhanced 404 with interactive JS features loaded!");
+    </script>
+  </body>
 </html>
