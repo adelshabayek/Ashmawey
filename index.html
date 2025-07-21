@@ -163,24 +163,7 @@
 
 
 
-  // 🌗 Dark mode with "D"
-  document.addEventListener("keydown", (e) => {
-    if (e.key.toLowerCase() === "d") {
-      document.body.classList.toggle("dark-mode");
-    }
-  });
-  const darkStyle = document.createElement("style");
-  darkStyle.textContent = `
-    body.dark-mode {
-      background: linear-gradient(135deg, #111, #333, #555);
-      color: #eee;
-    }
-    body.dark-mode .btn {
-      background: #eee;
-      color: #111;
-    }
-  `;
-  document.head.appendChild(darkStyle);
+  
 
   // ✨ Glow effect when cursor is near text
   document.addEventListener("mousemove", (e) => {
