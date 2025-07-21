@@ -1,153 +1,157 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-  <head>
-    <link rel="icon" href="img/logo.png" />
+<html lang="en">
+<head>
+    <link rel="icon" href="../img/logo.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 Not Found</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+    }
 
-    <meta name="author" content="Fact Café " />
-    <meta name="description" content="نقدم تجربة فريدة من الطعام والمشروبات اللذيذة في أجواء مريحة وأنيقة. "
-    />
-    <meta
-      property="og:image"
-      content="https://fact-menu.vercel.app/img/logo.png"
-    />
-    <meta
-      property="og:image:secure_url"
-      content="https://fact-menu.vercel.app/img/logo.png"
-    />
-    <meta
-      id="fbImage"
-      data-page-subject="true"
-      property="og:image"
-      content="https://fact-menu.vercel.app/img/logo.png"
-    />
-    <meta property="og:image:width" content="614" />
-    <meta property="og:image:height" content="430" />
-    <meta property="og:site_name" content="Fact Café " />
-    <meta property="og:url" content="https://fact-menu.vercel.app/" />
-    <meta property="og:title" content="Fact Café" />
-    <meta property="og:description" content="Fact Café " />
+    .wrapper {
+      z-index: 2;
+      animation: fadeIn 1.2s ease-out;
+      max-width: 90%;
+    }
 
-    <!-- title -->
-    <title>Fact Café</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
+    h1 {
+      font-size: 12vw;
+      font-weight: 900;
+      animation: popIn 1s ease-in-out;
+    }
 
-    <!-- google font  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    p {
+      font-size: 4vw;
+      max-width: 600px;
+      margin: 1rem auto;
+      opacity: 0.85;
+    }
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/bootstrap-grid.css" />
-    <link rel="stylesheet" href="css/bootstrap-grid-min.css" />
+    h2 {
+      font-size: 3.5vw;
+      font-weight: 400;
+      color: #ddd;
+      margin-bottom: 2rem;
+    }
 
-    <link rel="stylesheet" href="css/style.css" />
- 
-  </head>
-  <body>
-    <div class="content">
-      <!-- Language Toggle Button -->
+    .btn {
+      background-color: #fff;
+      color: #2c3e50;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      display: inline-block;
+    }
 
-      <!-- <div class="lang-toggle">
-        <button id="langBtn">العربية</button>
-      </div> -->
+    .btn:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-4px);
+    }
 
-      <div class="vi">
-        <span class="animate-charcter" style="">V1.0.3</span>
-      </div>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-      <div class="container">
-        <img src="img/logo.png" width="200px" class="rounded-50" />
-        <h1 data-en="Welcome to Fact Café" data-ar="مرحبًا بكم في كافيه فاكت">
-          Welcome to Fact Café
-        </h1>
-        <p
-          class="subtitle"
-          data-en="Where every sip and bite is a taste of elegance."
-          data-ar="نقدم تجربة فريدة من الطعام والمشروبات اللذيذة في أجواء مريحة وأنيقة."
-        >
-          نقدم تجربة فريدة من الطعام والمشروبات اللذيذة في أجواء مريحة وأنيقة.
-        </p>
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.7); }
+      100% { opacity: 1; transform: scale(1); }
+    }
 
-        <div class="button-group" data-aos="fade-up">
-          <button
-            class="cta-button"
-            onclick="document.location='/pages/drinks.html'"
-            data-en=" Drinks"
-            data-ar="المشروبات"
-          >
-            المشروبات
-          </button>
+    .bubbles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
 
-          <button
-            class="cta-button"
-            onclick="document.location='/pages/sweets.html'"
-            data-en="Bakery"
-            data-ar="قسم الحلويات و الوافل"
-          >
-            قسم الحلويات و الوافل
-          </button>
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: rise 10s infinite ease-in;
+    }
 
-          <button
-            class="cta-button"
-            onclick="document.location='/pages/foods.html'"
-            data-en="Bakery"
-            data-ar="قسم الوجبات السريعه"
-          >
-            قسم الوجبات السريعه
-          </button>
-        </div>
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1200px) scale(1.5);
+        opacity: 0;
+      }
+    }
 
-        <!-- Rest of the menu sections remain unchanged -->
-      </div>
-    </div>
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 8rem;
+      }
 
-    <!-- footer -->
-    <div class="footer">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-sm-12 col-md-6"
-            data-en="Copyrights © 2025 All Rights Reserved by Fact."
-            data-ar="جميع الحقوق محفوظة © 2025 كافيه فاكت."
-          >
-            جميع الحقوق محفوظة © 2025 كافيه فاكت.
-          </div>
-          <div class="col-sm-12 col-md-6">
-            <span data-en="Made By" data-ar="صنع بواسطة"> صنع بواسطة</span>
-            <a class="copyWrite" href="https://adelshabayek.vercel.app/"
-              >Adel Shabayek Des</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+      p {
+        font-size: 1.5rem;
+      }
 
-    <!-- bootstrap -->
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bubbles" id="bubbles"></div>
 
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/events.js"></script>
+  <div class="wrapper">
+    <h1>404 Not Found</h1>
+    <p style="font-size: 50px;">The server has been died.</p>
+    <h2>Please contact the developer</h2>
+    <a href="https://adelshabayek.vercel.app/" class="btn">contact him</a>
+  </div>
 
-    <script src="js/custom.js"></script>
+  <script>
+    // Create animated floating bubbles
+    const bubblesContainer = document.getElementById("bubbles");
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-      AOS.init({ duration: 1000, once: true });
-    </script>
-  </body>
+    for (let i = 0; i < 20; i++) {
+      const bubble = document.createElement("div");
+      bubble.classList.add("bubble");
+
+      const size = Math.random() * 60 + 20;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${Math.random() * 100}%`;
+      bubble.style.animationDuration = `${6 + Math.random() * 6}s`;
+      bubble.style.animationDelay = `${Math.random() * 4}s`;
+
+      bubblesContainer.appendChild(bubble);
+    }
+
+    console.log("🎈 Responsive 404 Page Loaded");
+  </script>
+</body>
 </html>
