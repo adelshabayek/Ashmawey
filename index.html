@@ -121,13 +121,21 @@
         font-size: 1.2rem;
       }
     }
+    .glow {
+  text-shadow: 
+    0 0 0px rgba(255, 255, 255, 0.83),
+    0 0 0px rgba(255, 255, 255, 0.83),
+    0 0 10px rgba(255, 255, 255, 0.83),
+    0 0 50px rgba(255, 255, 255, 0.83);
+}
+
   </style>
 </head>
 <body>
   <div class="bubbles" id="bubbles"></div>
 
   <div class="wrapper">
-    <h1>404 Not Found</h1>
+    <h1 class="glow">404 Not Found</h1>
     <p style="font-size: 50px;"> Server has been died.</p>
     <h2>Please contact the developer</h2>
     <a href="https://adelshabayek.vercel.app/" class="btn">contact him</a>
@@ -165,14 +173,6 @@
 
   
 
-  // ✨ Glow effect when cursor is near text
-  document.addEventListener("mousemove", (e) => {
-    const wrapper = document.querySelector(".wrapper");
-    const rect = wrapper.getBoundingClientRect();
-    const dist = Math.hypot(e.clientX - rect.left - rect.width / 2, e.clientY - rect.top - rect.height / 2);
-    const glow = Math.max(100 - dist / 5, 0);
-    wrapper.style.textShadow = `0 0 ${glow}px rgba(255,255,255,0.7)`;
-  });
 
 
 
